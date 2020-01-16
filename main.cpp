@@ -1,4 +1,4 @@
-#include <SeqList.h>
+// #include <SeqList.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -16,10 +16,10 @@ void hello()
 
 void seqListTest()
 {
-   SeqList seqList = new SeqList(64);
+   // SeqList seqList = new SeqList(64);
 }
 
 int main()
 {
-   // hello();
+   hello();
 }
