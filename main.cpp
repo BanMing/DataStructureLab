@@ -1,7 +1,7 @@
+#include <SeqList.h>
 #include <iostream>
 #include <string>
 #include <vector>
-#include<List>
 using namespace std;
 
 void hello()
@@ -14,8 +14,9 @@ void hello()
    cout << endl;
 }
 
-void seqListTest(){
-   
+void seqListTest()
+{
+   SeqList seqList = new SeqList(64);
 }
 
 int main()
