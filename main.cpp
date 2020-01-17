@@ -1,4 +1,4 @@
-// #include <SeqList.h>
+//#include <SeqList.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -14,10 +14,14 @@ void hello()
    cout << endl;
 }
 
-void seqListTest()
-{
-   // SeqList seqList = new SeqList(64);
-}
+//void seqListTest(int n, int s, int d)
+//{
+//   SeqList<int> jose(n);
+//   int removeIndex = (n + s) % d;
+//   while (jose.Length() > 1)
+//   {
+//   }
+//}
 
 int main()
 {
