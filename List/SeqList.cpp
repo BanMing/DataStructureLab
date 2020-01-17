@@ -1,80 +1,68 @@
 #include<SeqList.h>
+
 // 增加长度
-template <class T>
-void SeqList<T>::addLen()
-{
+template<class T>
+void SeqList<T>::addLen() {
     this->size *= 2;
     T *newElement = new T[this->size];
-    for (int i = 0; i < this->len; i++)
-    {
+    for (int i = 0; i < this->len; i++) {
         newElement[i] = this->element[i];
     }
     this->element = newElement;
 }
 
 // 按长度初始化顺序表
-template <class T>
-SeqList<T>::SeqList(int size)
-{
+template<class T>
+SeqList<T>::SeqList(int size) {
     this->size = size < 64 ? 64 : size;
     this->element = new T[this->size];
     this->len = 0;
 }
 
 // 复制一个数组到顺序表
-template <class T>
-SeqList<T>::SeqList(T value[], int size)
-{
-    if (size > 0)
-    {
+template<class T>
+SeqList<T>::SeqList(T value[], int size) {
+    if (size > 0) {
         this = new SeqList(size);
-        for (int i = 0; i < size; i++)
-        {
+        for (int i = 0; i < size; i++) {
             this->element[i] = value[i];
         }
     }
 }
 
 //  析构函数
-template <class T>
-SeqList<T>::~SeqList()
-{
+template<class T>
+SeqList<T>::~SeqList() {
     delete[] this->element();
     this->size = 0;
     this->len = 0;
 }
 
 // 判断顺序表是否为空
-template <class T>
-bool SeqList<T>::IsEmpty()
-{
+template<class T>
+bool SeqList<T>::IsEmpty() {
     return this->len == 0;
 }
 
 // 顺序表长度
-template <class T>
-int SeqList<T>::Length()
-{
+template<class T>
+int SeqList<T>::Length() {
     return this->len;
 }
 
 // 获得一个元素根据index
-template <class T>
-T SeqList<T>::Get(int index)
-{
-    if (index >= len)
-    {
+template<class T>
+T SeqList<T>::Get(int index) {
+    if (index >= len) {
         return NULL;
     }
     return this->element[index];
 }
 
 // 设置一个元素到顺序表
-template <class T>
-bool SeqList<T>::Set(int index, T x)
-{
-    if (index >= len)
-    {
+template<class T>
+bool SeqList<T>::Set(int index, T x) {
+    if (index >= len) {
         return false;
     }
     this->element[index] = NULL;
@@ -83,12 +71,10 @@ bool SeqList<T>::Set(int index, T x)
 }
 
 // 输出每个元素
-template <class T>
-std::ostream &operator<<(std::ostream &out, SeqList<T> &list)
-{
+template<class T>
+std::ostream &operator<<(std::ostream &out, SeqList<T> &list) {
     out << "(";
-    for (int i = 0; i < list->len; i++)
-    {
+    for (int i = 0; i < list->len; i++) {
         out << "," << list->element[i];
     }
     out << ")\n";
@@ -96,23 +82,19 @@ std::ostream &operator<<(std::ostream &out, SeqList<T> &list)
 }
 
 // 插入一个特定元素到特定位置
-template <class T>
-bool SeqList<T>::Insert(int index, T x)
-{
-    if (index >= len)
-    {
+template<class T>
+bool SeqList<T>::Insert(int index, T x) {
+    if (index >= len) {
         return false;
     }
-    if (this->len == this->size)
-    {
+    if (this->len == this->size) {
         this->addLen();
     }
     // 防错处理
     index = index < 0 ? 0 : index;
     index = index > this->len ? this->len : index;
 
-    for (int i = this->len - 1; i > index; i--)
-    {
+    for (int i = this->len - 1; i > index; i--) {
         this->element[i] = this->element[i - 1];
     }
     this->element[index] = x;
@@ -121,11 +103,9 @@ bool SeqList<T>::Insert(int index, T x)
 }
 
 // 插入最后一个位置
-template <class T>
-bool SeqList<T>::Insert(T x)
-{
-    if (this->len == this->size)
-    {
+template<class T>
+bool SeqList<T>::Insert(T x) {
+    if (this->len == this->size) {
         this->addLen();
     }
 
@@ -134,9 +114,8 @@ bool SeqList<T>::Insert(T x)
 }
 
 // 清空
-template <class T>
-void SeqList<T>::Clear()
-{
+template<class T>
+void SeqList<T>::Clear() {
     delete[] this->element;
     this->size = 0;
     this->len = 0;
