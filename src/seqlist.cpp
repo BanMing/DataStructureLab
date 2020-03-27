@@ -1,3 +1,4 @@
+
 #include "seqlist.h"
 
 // 增加长度
@@ -54,7 +55,7 @@ int seqlist<T>::Length() {
 template<class T>
 T seqlist<T>::Get(int index) {
     if (index >= len) {
-        return NULL;
+        return nullptr;
     }
     return this->element[index];
 }
@@ -65,7 +66,7 @@ bool seqlist<T>::Set(int index, T x) {
     if (index >= len) {
         return false;
     }
-    this->element[index] = NULL;
+    this->element[index] = nullptr;
     this->element[index] = x;
     return true;
 }
@@ -94,8 +95,8 @@ bool seqlist<T>::Insert(int index, T x) {
 
 // 输出每个元素
 template<class T>
-string seqlist<T>::ToString() {
-    string res = "";
+std::string seqlist<T>::ToString() {
+    std::string res = "";
     for (int i = 0; i < this->len; ++i) {
         res += to_string(this->element[i]) + "\t";
     }
