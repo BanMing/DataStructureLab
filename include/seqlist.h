@@ -1,6 +1,6 @@
 
 #include <iostream>
-//using namespace std;
+using namespace std;
 //顺序表类，T指定元素类型
 template<class T>
 class seqlist {

@@ -55,7 +55,7 @@ int seqlist<T>::Length() {
 template<class T>
 T seqlist<T>::Get(int index) {
     if (index >= len) {
-        return nullptr;
+        return 0;
     }
     return this->element[index];
 }
@@ -135,4 +135,22 @@ void seqlist<T>::Clear() {
     delete (this->element);
     this->size = 0;
     this->len = 0;
+}
+
+
+//
+void seqListTest(int n, int s, int d) {
+    seqlist<char> jose = seqlist<char>(n);
+    for (int i = 0; i < n; ++i) {
+        jose.Insert(i);
+    }
+    cout << jose.ToString() << endl;
+    while (jose.Length() > 2) {
+        int removeIndex = (s + d - 1) % n;
+        char oldVal = 0;
+        jose.Remove(removeIndex, oldVal);
+        printf("remove index: %d\n", oldVal);
+        s = (removeIndex + 1) % n;
+    }
+    printf("left index: %c\n", jose.Get(0));
 }

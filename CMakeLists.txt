@@ -7,10 +7,11 @@ include_directories(include)
 set(CMAKE_CXX_STANDARD 14)
 
 #设置源文件
-file(GLOB SOURCES "src/*.cpp")
-#aux_source_directory(. SOURCES)
+file(GLOB_RECURSE SOURCE_FILES ${PROJECT_SOURCE_DIR}/src/*cpp)
 
+add_library(data_structure_src SHARED ${SOURCE_FILES})
+add_executable(data_structure main.cpp)
 
-
-#add_library(dome ${SOURCES})
-add_executable(data_structure main.cpp ${SOURCES})
+target_link_libraries(data_structure
+data_structure_src
+)
