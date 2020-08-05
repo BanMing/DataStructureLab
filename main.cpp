@@ -2,7 +2,7 @@
 #include <string>
 // #include "include/hello.h"
 #include "src/hello.cpp"
-#include "src/some_test.cpp"
+#include "test/IntCellTest.cpp"
 using namespace std;
 
 int main()
@@ -10,5 +10,5 @@ int main()
     hello hello;
     hello.Say();
 
-    VectorTest();
+   Test1();
 }
