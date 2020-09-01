@@ -78,7 +78,7 @@ int getbanaryNum(int n)
 
 void permute(const string &str)
 {
-    permute(str, 0, str.size());
+    // permute(str, 0, str.size());
 }
 
 void permute(const string &str, int low, int high)
